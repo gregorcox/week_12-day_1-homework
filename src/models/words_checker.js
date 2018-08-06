@@ -5,10 +5,10 @@ const WordChecker = function () {
 };
 
 WordChecker.prototype.bindEvents = function () {
-  PubSub.subscribe('InputView:sentence-inputted', (evt) => {
+  PubSub.subscribe('InputView:text-inputted', (evt) => {
     const inputtedSentence = evt.detail;
     const result = this.numberOfWords(inputtedSentence);
-    PubSub.publish('WordsChecker:result', result);
+    PubSub.publish('WordChecker:result', result);
   });
 };
 
